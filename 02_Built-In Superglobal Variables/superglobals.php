@@ -22,7 +22,6 @@ echo "Script Name: " . $_SERVER['SCRIPT_NAME'] . "<br>";
 // -----------------------------------
 ?>
 
-
 <h2>$_GET and $_POST Example</h2>
 <form method="post" action="">
     Name: <input type="text" name="username"><br>
