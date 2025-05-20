@@ -1,6 +1,12 @@
 <?php
 // Check if the request is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $Name = $_POST["name"];
+    $Email = $_POST["name"];
+
+
+
+
     // Database connection settings
     $host = 'localhost';
     $dbname = 'test_db';
@@ -13,12 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Prepare and bind data
-        $stmt = $pdo->prepare("INSERT INTO users (name, email) VALUES (:name, :email)");
-        $stmt->bindParam(':name', $_POST['name']);
-        $stmt->bindParam(':email', $_POST['email']);
+        $query = "INSERT INTO users (name, email) VALUES (?, ?);";
+
+        $stmt = $pdo->prepare($query);
 
         // Execute insertion
-        $stmt->execute();
+        $stmt->execute([$Name,$Email]);
 
         echo "✅ User added successfully!<br>";
         echo "<a href='add-user.html'>Add another user</a>";
