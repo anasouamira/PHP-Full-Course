@@ -32,6 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "✅ User added successfully!<br>";
         echo "<a href='add-user.html'>Add another user</a>";
 
+        $pdo = null;
+        $stmt = null;
+        exit();
     } catch (PDOException $e) {
         echo "❌ Error: " . $e->getMessage();
     }
