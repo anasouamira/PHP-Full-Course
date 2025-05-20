@@ -2,16 +2,19 @@
 // Check if the request is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Name = $_POST["name"];
-    $Email = $_POST["name"];
-
-
-
+    $Email = $_POST["email"];
 
     // Database connection settings
     $host = 'localhost';
     $dbname = 'test_db';
     $username = 'root';
     $password = '';
+
+        if (empty($name) || empty($email)) {
+        echo "<p style='color:red;'>Missing required fields!</p>";
+        echo "<p><a href='add-user.html'>Go back to the form</a></p>";
+        }
+        exit();
 
     try {
         // Connect using PDO
