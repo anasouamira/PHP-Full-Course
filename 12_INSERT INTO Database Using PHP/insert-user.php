@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
         }
         
-
     try {
         // Connect using PDO
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
