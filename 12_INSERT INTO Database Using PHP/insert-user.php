@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p><a href='add-user.html'>Go back to the form</a></p>";
         exit();
         }
+        
     try {
         // Connect using PDO
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
